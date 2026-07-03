@@ -1,0 +1,5 @@
+# Mac worker dependencies (install into .venv; also run: playwright install chromium)
+playwright>=1.44
+supabase>=2.5
+requests>=2.31
+python-dotenv>=1.0

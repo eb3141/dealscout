@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.elliott.dealscout-worker</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/elliottbarthel/Desktop/dealscout/.venv/bin/python</string>
+        <string>-m</string>
+        <string>worker.main</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/elliottbarthel/Desktop/dealscout</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <!-- codex lives in /usr/local/bin; launchd's default PATH omits it -->
+        <key>PATH</key>
+        <string>/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin</string>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>ThrottleInterval</key>
+    <integer>15</integer>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/dealscout-worker.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/dealscout-worker.err.log</string>
+</dict>
+</plist>

@@ -1,0 +1,4 @@
+# Streamlit Cloud (UI) dependencies — worker-only deps live in requirements-worker.txt
+streamlit>=1.36
+supabase>=2.5
+requests>=2.31

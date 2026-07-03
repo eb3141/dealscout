@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* ---------- hero ---------- */
+.ds-hero {
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 55%, #2c5364 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 26px 32px 22px;
+    margin-bottom: 6px;
+}
+.ds-hero h1 {
+    color: #f8fafc;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0;
+    padding: 0;
+}
+.ds-hero h1 .accent { color: #4ade80; }
+.ds-hero p {
+    color: #94a3b8;
+    margin: 6px 0 0;
+    font-size: 0.95rem;
+}
+
+/* ---------- status pill ---------- */
+.ds-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-top: 12px;
+}
+.ds-status .dot { width: 9px; height: 9px; border-radius: 50%; }
+.ds-status.online { background: rgba(74, 222, 128, 0.12); color: #4ade80; }
+.ds-status.online .dot { background: #4ade80; box-shadow: 0 0 8px #4ade80; }
+.ds-status.offline { background: rgba(248, 113, 113, 0.12); color: #f87171; }
+.ds-status.offline .dot { background: #f87171; }
+
+/* ---------- deal cards ---------- */
+.ds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 18px;
+    margin-top: 14px;
+}
+.ds-card {
+    background: rgba(30, 41, 59, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+    display: flex;
+    flex-direction: column;
+}
+.ds-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(74, 222, 128, 0.45);
+}
+.ds-card .thumb {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+    background: #0f172a;
+    display: block;
+}
+.ds-card .thumb-empty {
+    width: 100%;
+    height: 185px;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #334155;
+    font-size: 2.4rem;
+}
+.ds-card .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+.ds-card .toprow { display: flex; justify-content: space-between; align-items: center; }
+.ds-card .price { color: #f8fafc; font-size: 1.25rem; font-weight: 800; }
+.ds-card .title {
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.ds-card .meta { color: #94a3b8; font-size: 0.82rem; }
+.ds-card .reason { color: #cbd5e1; font-size: 0.84rem; font-style: italic; }
+.ds-card .footer { margin-top: auto; padding-top: 8px; }
+.ds-card .fb-link {
+    display: inline-block;
+    background: rgba(74, 222, 128, 0.14);
+    color: #4ade80 !important;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(74, 222, 128, 0.35);
+}
+.ds-card .fb-link:hover { background: rgba(74, 222, 128, 0.25); }
+
+/* score pill */
+.ds-score {
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+}
+.ds-score.hi  { background: rgba(74, 222, 128, 0.16); color: #4ade80; }
+.ds-score.mid { background: rgba(250, 204, 21, 0.16); color: #facc15; }
+.ds-score.lo  { background: rgba(148, 163, 184, 0.16); color: #94a3b8; }
+
+/* flag + seen chips */
+.ds-chip {
+    display: inline-block;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    margin-right: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.ds-chip.scam  { background: rgba(248, 113, 113, 0.16); color: #f87171; }
+.ds-chip.value { background: rgba(74, 222, 128, 0.16); color: #4ade80; }
+.ds-chip.warn  { background: rgba(250, 204, 21, 0.16); color: #facc15; }
+.ds-chip.seen  { background: rgba(148, 163, 184, 0.16); color: #94a3b8; }
+
+/* login card */
+.ds-login {
+    text-align: center;
+    padding: 30px 10px 6px;
+}
+.ds-login .logo { font-size: 3rem; }
+.ds-login h2 { color: #f8fafc; font-weight: 800; margin: 8px 0 2px; }
+.ds-login p { color: #94a3b8; font-size: 0.9rem; }
