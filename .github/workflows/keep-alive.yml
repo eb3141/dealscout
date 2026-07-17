@@ -10,11 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping Streamlit app
+        env:
+          APP_URL: ${{ vars.APP_URL }}
         run: |
+          # Until the app is deployed and the APP_URL repo variable is set
+          # (gh variable set APP_URL --body "https://<app>.streamlit.app/"),
+          # there is nothing to ping — skip instead of failing.
+          if [ -z "$APP_URL" ]; then
+            echo "::notice::APP_URL repo variable not set — app not deployed yet, skipping ping."
+            exit 0
+          fi
           # Follow Streamlit's auth-cookie handshake (-L with a cookie jar) so the
           # request actually loads the app and returns HTTP 200, instead of stopping
           # at the initial 303 redirect. -f makes a real 4xx/5xx fail the step.
-          # TODO: replace URL after first Streamlit Cloud deploy.
           curl -sSfL -c /tmp/cookies.txt -b /tmp/cookies.txt --max-redirs 10 -o /dev/null \
             -w "HTTP %{http_code}\n" \
-            "${{ vars.APP_URL || 'https://REPLACE-AFTER-DEPLOY.streamlit.app/' }}"
+            "$APP_URL"
