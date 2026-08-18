@@ -24,7 +24,7 @@ alone for testing.
 
 ### 1. Mac worker
 ```bash
-cd ~/Desktop/dealscout
+cd ~/Developer/dealscout
 python3 -m venv .venv && .venv/bin/pip install -r requirements-worker.txt
 .venv/bin/playwright install chromium
 .venv/bin/python -m worker.fb_login     # log into Facebook once in the window
@@ -34,7 +34,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements-worker.txt
 1. https://supabase.com → New project (any name/region).
 2. SQL Editor → paste `deploy/schema.sql` → Run.
 3. Project Settings → API: copy the **URL** and the **service_role key**.
-4. Put them in `~/Desktop/dealscout/.env`:
+4. Put them in `~/Developer/dealscout/.env`:
    ```
    SUPABASE_URL=https://xxxx.supabase.co
    SUPABASE_SERVICE_KEY=eyJ...
@@ -50,7 +50,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements-worker.txt
    ```
    Generate the hash: `python3 -c "import hashlib;print(hashlib.sha256(b'yourpassword').hexdigest())"`
 3. After deploy, put the app URL into `.github/workflows/keep-alive.yml`
-   (or set an `APP_URL` repository variable) so the 6-hourly ping keeps it awake.
+   (or set an `APP_URL` repository variable) so the 10-minute ping keeps it awake.
 
 ### 4. Worker as a service (starts on login, restarts on crash)
 ```bash

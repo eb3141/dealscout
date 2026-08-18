@@ -7,13 +7,13 @@
 
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/elliottbarthel/Desktop/dealscout/.venv/bin/python</string>
+        <string>/Users/elliottbarthel/Developer/dealscout/.venv/bin/python</string>
         <string>-m</string>
         <string>worker.main</string>
     </array>
 
     <key>WorkingDirectory</key>
-    <string>/Users/elliottbarthel/Desktop/dealscout</string>
+    <string>/Users/elliottbarthel/Developer/dealscout</string>
 
     <key>EnvironmentVariables</key>
     <dict>
